@@ -5,10 +5,11 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": "./src", // Indica que la base para los imports es la carpeta "src"
+    "baseUrl": ".", // Indica que la base para los imports es la carpeta "src"
     "paths": {
-      "*": ["src/*"] // Esto hace que cualquier importación con "src/" se resuelva dentro de la carpeta "src"
+      "@/*": ["src/*"] // Esto hace que cualquier importación con "src/" se resuelva dentro de la carpeta "src"
     },
     "types": ["node"]
-  }
+  },
+  "include": ["src", "src/types"]
 }

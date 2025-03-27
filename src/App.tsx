@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button } from "./components";
+import { Button } from "@/components";
+import Characters from "@/components/Characters/Characters";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,9 +11,7 @@ function App() {
       <Button onClick={() => setCount((count) => count + 1)}>
         count is {count}
       </Button>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Characters />
     </>
   );
 }
