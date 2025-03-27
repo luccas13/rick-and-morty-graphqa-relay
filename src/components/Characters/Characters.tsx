@@ -1,7 +1,7 @@
 import React from "react";
 import { useLazyLoadQuery } from "react-relay";
 import { CharactersQuery } from "../../graphql/queries/CharactersQuery.graphql";
-import { CharactersQuery as CharactersQueryTypes } from "@/relay/__generated__/CharactersQuery.graphql";
+import { CharactersQuery as CharactersQueryTypes } from "@/relay/__generated__";
 
 const Characters: React.FC = () => {
   const data = useLazyLoadQuery<CharactersQueryTypes>(CharactersQuery, {});
