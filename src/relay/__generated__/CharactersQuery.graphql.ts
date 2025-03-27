@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<9644ef2b738b02f85546109d3573fcf3>>
+ * @generated SignedSource<<ea9017cb01b0963bab99fb095d6939cc>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,9 +9,15 @@
 // @ts-nocheck
 
 import { ConcreteRequest } from 'relay-runtime';
-export type CharactersQuery$variables = Record<PropertyKey, never>;
+export type CharactersQuery$variables = {
+  page?: number | null | undefined;
+};
 export type CharactersQuery$data = {
   readonly characters: {
+    readonly info: {
+      readonly count: number | null | undefined;
+      readonly pages: number | null | undefined;
+    } | null | undefined;
     readonly results: ReadonlyArray<{
       readonly gender: string | null | undefined;
       readonly id: string | null | undefined;
@@ -30,8 +36,21 @@ export type CharactersQuery = {
 const node: ConcreteRequest = (function(){
 var v0 = [
   {
+    "defaultValue": null,
+    "kind": "LocalArgument",
+    "name": "page"
+  }
+],
+v1 = [
+  {
     "alias": null,
-    "args": null,
+    "args": [
+      {
+        "kind": "Variable",
+        "name": "page",
+        "variableName": "page"
+      }
+    ],
     "concreteType": "Characters",
     "kind": "LinkedField",
     "name": "characters",
@@ -89,6 +108,31 @@ var v0 = [
           }
         ],
         "storageKey": null
+      },
+      {
+        "alias": null,
+        "args": null,
+        "concreteType": "Info",
+        "kind": "LinkedField",
+        "name": "info",
+        "plural": false,
+        "selections": [
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "count",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "pages",
+            "storageKey": null
+          }
+        ],
+        "storageKey": null
       }
     ],
     "storageKey": null
@@ -96,32 +140,32 @@ var v0 = [
 ];
 return {
   "fragment": {
-    "argumentDefinitions": [],
+    "argumentDefinitions": (v0/*: any*/),
     "kind": "Fragment",
     "metadata": null,
     "name": "CharactersQuery",
-    "selections": (v0/*: any*/),
+    "selections": (v1/*: any*/),
     "type": "Query",
     "abstractKey": null
   },
   "kind": "Request",
   "operation": {
-    "argumentDefinitions": [],
+    "argumentDefinitions": (v0/*: any*/),
     "kind": "Operation",
     "name": "CharactersQuery",
-    "selections": (v0/*: any*/)
+    "selections": (v1/*: any*/)
   },
   "params": {
-    "cacheID": "78cf3c0a8f1d4b6599f7d15eb3d9fa47",
+    "cacheID": "a20bb70578dfc56eb9bff91f6f4bc9c6",
     "id": null,
     "metadata": {},
     "name": "CharactersQuery",
     "operationKind": "query",
-    "text": "query CharactersQuery {\n  characters {\n    results {\n      id\n      name\n      status\n      species\n      gender\n      image\n    }\n  }\n}\n"
+    "text": "query CharactersQuery(\n  $page: Int\n) {\n  characters(page: $page) {\n    results {\n      id\n      name\n      status\n      species\n      gender\n      image\n    }\n    info {\n      count\n      pages\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "3404662117df10ad558f1ae9e80358a7";
+(node as any).hash = "ff8f4d075c01445f89d5ee8881586d72";
 
 export default node;

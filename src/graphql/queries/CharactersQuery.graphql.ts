@@ -1,8 +1,8 @@
 import { graphql } from "react-relay";
 
 export const CharactersQuery = graphql`
-  query CharactersQuery {
-    characters {
+  query CharactersQuery($page: Int) {
+    characters(page: $page) {
       results {
         id
         name
@@ -10,6 +10,10 @@ export const CharactersQuery = graphql`
         species
         gender
         image
+      },
+      info {
+        count
+        pages
       }
     }
   }

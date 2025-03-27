@@ -12,7 +12,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"), // Alias para la carpeta "src"
     },
   },
-  define: {
-    "process.env": {}, // Esto ayuda a evitar problemas con `process.env` en el código
-  },
 });

@@ -1,9 +1,11 @@
-import Characters from "@/components/Characters/Characters";
+import { Characters } from "@/components";
 
 function App() {
+  console.log("hola mundo");
+
   return (
     <>
-      <Characters />
+      <Characters />{" "}
     </>
   );
 }
