@@ -7,7 +7,6 @@ export const Characters = () => {
     page: 2,
   });
 
-  console.log(data.characters?.info?.count);
   if (!data || !data.characters) {
     return <div>Loading...</div>;
   }
@@ -24,7 +23,6 @@ export const Characters = () => {
                 width={50}
               />
               <p>{character?.name || "No data"}</p>
-              <p>{character?.species || "No data"}</p>
             </li>
           ))}
       </ul>
