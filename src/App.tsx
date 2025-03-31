@@ -1,17 +1,47 @@
-import { useState } from "react";
+import { Characters } from "@/pages/Characters/Characters";
+import { CharacterDetail } from "@/pages/CharacterDetail/CharacterDetail";
+import "./App.scss";
+import { Suspense, useState } from "react";
+import { useQueryLoader } from "react-relay";
+import { CharacterQuery } from "@/graphql/queries/CharacterQuery.graphql";
+import { CharacterQuery as CharacterQueryTypes } from "@/relay";
+import { CharactersQuery$variables as FilterTypes } from "@/relay";
 
+const DEFAULT_PARAMS = { page: 1 };
 function App() {
-  const [count, setCount] = useState(0);
+  const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
+  const [params, setParams] = useState<FilterTypes>(DEFAULT_PARAMS);
+
+  const [queryReference, loadQuery] =
+    useQueryLoader<CharacterQueryTypes>(CharacterQuery);
+
+  const onClickDetailHandler = (id: string) => {
+    loadQuery({ id });
+    setSelectedId(id);
+  };
+
+  const onClickCloseHandler = () => {
+    setSelectedId(undefined);
+  };
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {!selectedId ? (
+        <Characters
+          params={params}
+          onChangeParams={setParams}
+          onClickDetail={onClickDetailHandler}
+        />
+      ) : (
+        queryReference && (
+          <Suspense fallback={<p>Loading Character...</p>}>
+            <CharacterDetail
+              queryReference={queryReference}
+              onClickClose={onClickCloseHandler}
+            />
+          </Suspense>
+        )
+      )}
     </>
   );
 }
