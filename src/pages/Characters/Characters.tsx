@@ -53,9 +53,9 @@ export const Characters = ({
           data.characters.results.map((character) => (
             <div className="characters_list_item" key={character?.id}>
               <img
+                className="w-auto h-9/10"
                 src={character?.image || undefined}
                 alt={character?.name || undefined}
-                width={50}
                 onClick={() => onClickImage(character?.id)}
               />
               <p>{character?.name}</p>

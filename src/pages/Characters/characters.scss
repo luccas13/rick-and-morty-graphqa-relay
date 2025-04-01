@@ -15,13 +15,13 @@
     .characters_list_item {
       width: 30%;
       height: 300px;
-      img {
-        height: 90%;
-        width: auto;
-        &:hover {
-          cursor: pointer;
-        }
-      }
+      // img {
+      //   height: 90%;
+      //   width: auto;
+      //   &:hover {
+      //     cursor: pointer;
+      //   }
+      // }
     }
   }
   .filter_container {
