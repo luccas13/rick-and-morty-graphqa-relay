@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "@/App";
 import relayEnvironment from "./graphql/RelayEnvironment";
 import { RelayEnvironmentProvider } from "react-relay";
+import "./main.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
