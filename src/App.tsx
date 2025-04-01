@@ -1,6 +1,5 @@
 import { Characters } from "@/pages/Characters/Characters";
 import { CharacterDetail } from "@/pages/CharacterDetail/CharacterDetail";
-import "./App.scss";
 import { Suspense, useState } from "react";
 import { useQueryLoader } from "react-relay";
 import { CharacterQuery } from "@/graphql/queries/CharacterQuery.graphql";

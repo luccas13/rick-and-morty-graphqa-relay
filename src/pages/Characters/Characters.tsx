@@ -5,7 +5,6 @@ import {
   CharactersQuery$variables as FilterTypes,
 } from "@/relay";
 import { startTransition } from "react";
-import "./characters.scss";
 import { Button } from "@/components";
 
 type Props = {
@@ -46,12 +45,12 @@ export const Characters = ({
   };
 
   return (
-    <div className="characters_container">
-      <h2 className="characters_title">Characters</h2>
-      <div className="characters_list_container">
+    <div>
+      <h2>Characters</h2>
+      <div>
         {data.characters?.results &&
           data.characters.results.map((character) => (
-            <div className="characters_list_item" key={character?.id}>
+            <div key={character?.id}>
               <img
                 className="w-auto h-9/10"
                 src={character?.image || undefined}
@@ -62,7 +61,7 @@ export const Characters = ({
             </div>
           ))}
       </div>
-      <div className="filter_container">
+      <div>
         <Button onClick={onChangePrev}>Prev</Button>
         <Button onClick={onChangeNext}>Next</Button>
       </div>
