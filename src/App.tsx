@@ -1,46 +1,24 @@
-import { Characters } from "@/pages/Characters/Characters";
-import { CharacterDetail } from "@/pages/CharacterDetail/CharacterDetail";
-import { Suspense, useState } from "react";
-import { useQueryLoader } from "react-relay";
-import { CharacterQuery } from "@/graphql/queries/CharacterQuery.graphql";
-import { CharacterQuery as CharacterQueryTypes } from "@/relay";
-import { CharactersQuery$variables as FilterTypes } from "@/relay";
+import { Routes, Route } from "react-router";
+import {
+  Home,
+  CharactersList,
+  Episodes,
+  Locations,
+  CharacterDetail,
+} from "./pages";
+import { NavMenu } from "./components";
 
-const DEFAULT_PARAMS = { page: 1 };
 function App() {
-  const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
-  const [params, setParams] = useState<FilterTypes>(DEFAULT_PARAMS);
-
-  const [queryReference, loadQuery] =
-    useQueryLoader<CharacterQueryTypes>(CharacterQuery);
-
-  const onClickDetailHandler = (id: string) => {
-    loadQuery({ id });
-    setSelectedId(id);
-  };
-
-  const onClickCloseHandler = () => {
-    setSelectedId(undefined);
-  };
-
   return (
     <>
-      {!selectedId ? (
-        <Characters
-          params={params}
-          onChangeParams={setParams}
-          onClickDetail={onClickDetailHandler}
-        />
-      ) : (
-        queryReference && (
-          <Suspense fallback={<p>Loading Character...</p>}>
-            <CharacterDetail
-              queryReference={queryReference}
-              onClickClose={onClickCloseHandler}
-            />
-          </Suspense>
-        )
-      )}
+      <NavMenu />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/characters" element={<CharactersList />} />
+        <Route path="/characters/:id" element={<CharacterDetail />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/episodes" element={<Episodes />} />
+      </Routes>
     </>
   );
 }

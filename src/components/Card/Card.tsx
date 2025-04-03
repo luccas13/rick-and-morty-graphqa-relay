@@ -1,17 +1,20 @@
 import { HTMLAttributes, ImgHTMLAttributes } from "react";
 
-type CardProps = {
+type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   className?: string;
   children: React.ReactNode;
 };
 
-export function Card({ className, ...rest }: CardProps) {
+export function Card({ className, children, ...rest }: CardProps) {
   return (
     <div
       {...rest}
-      className={`flex flex-col gap-4 rounded-lg border bg-card p-6 shadow ${className}
-      `}
-    />
+      className={`flex flex-col gap-4 rounded-lg border bg-card p-6 shadow ${
+        className || ""
+      }`}
+    >
+      {children}
+    </div>
   );
 }
 
@@ -33,9 +36,14 @@ export function CardDescription(props: CardDescriptionProps) {
   );
 }
 
-export function CardImage({
-  alt,
-  ...rest
-}: ImgHTMLAttributes<HTMLImageElement>) {
-  return <img className={"w-full rounded object-cover"} alt={alt} {...rest} />;
+type CardImageProps = ImgHTMLAttributes<HTMLImageElement>;
+
+export function CardImage({ alt, className, ...rest }: CardImageProps) {
+  return (
+    <img
+      className={`w-full rounded object-cover ${className}`}
+      alt={alt}
+      {...rest}
+    />
+  );
 }

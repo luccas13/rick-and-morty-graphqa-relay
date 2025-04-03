@@ -4,4 +4,5 @@ export * from "./Dialog/Dialog";
 export * from "./InfiniteScrollSentry/InfiniteScrollSentry";
 export * from "./List/List";
 export * from "./Loading/Loading";
+export * from "./Nav/Nav";
 export * from "./Specs/Specs";
