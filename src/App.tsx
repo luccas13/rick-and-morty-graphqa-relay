@@ -1,12 +1,6 @@
-import { Routes, Route } from "react-router";
-import {
-  Home,
-  CharactersList,
-  EpisodesList,
-  Locations,
-  CharacterDetail,
-} from "./pages";
-import { NavMenu } from "./components";
+import { Routes, Route } from 'react-router';
+import { Home, CharactersList, EpisodesList, LocationsList, CharacterDetail } from './pages';
+import { NavMenu } from './components';
 
 function App() {
   return (
@@ -16,7 +10,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<CharactersList />} />
         <Route path="/characters/:id" element={<CharacterDetail />} />
-        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations" element={<LocationsList />} />
         <Route path="/episodes" element={<EpisodesList />} />
       </Routes>
     </>
