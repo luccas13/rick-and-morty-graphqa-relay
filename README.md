@@ -45,6 +45,6 @@ Esta aplicación consume la API pública de **Rick and Morty**:
 ---
 
 ## 🚀 \*\*Desarrollado por 
-### \*\*[**Lucas Bracco**](https://github.com/luccas13)
-### \*\*[**Ezequiel Carrizo**](https://github.com/Ezequiel-CE)
+* [**Lucas Bracco**](https://github.com/luccas13)
+* [**Ezequiel Carrizo**](https://github.com/Ezequiel-CE)
 
