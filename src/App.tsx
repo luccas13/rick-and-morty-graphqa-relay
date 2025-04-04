@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router";
 import {
   Home,
   CharactersList,
-  Episodes,
+  EpisodesList,
   Locations,
   CharacterDetail,
 } from "./pages";
@@ -17,7 +17,7 @@ function App() {
         <Route path="/characters" element={<CharactersList />} />
         <Route path="/characters/:id" element={<CharacterDetail />} />
         <Route path="/locations" element={<Locations />} />
-        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/episodes" element={<EpisodesList />} />
       </Routes>
     </>
   );
