@@ -3,7 +3,7 @@ import {
   Home,
   CharactersList,
   EpisodesList,
-  Locations,
+  LocationsList,
   CharacterDetail,
 } from "./pages";
 import { NavMenu } from "./components";
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/characters" element={<CharactersList />} />
         <Route path="/characters/:id" element={<CharacterDetail />} />
-        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations" element={<LocationsList />} />
         <Route path="/episodes" element={<EpisodesList />} />
       </Routes>
     </>
