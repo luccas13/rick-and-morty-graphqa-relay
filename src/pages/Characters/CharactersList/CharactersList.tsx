@@ -8,6 +8,7 @@ import { startTransition, useState } from "react";
 import { Button, Card, CardImage, CardTitle, Input, List } from "@/components";
 import { useNavigate } from "react-router";
 import { RxMagnifyingGlass } from "react-icons/rx";
+import { denormalizeId } from "@/utils";
 
 const DEFAULT_PARAMS = { page: 1 };
 
@@ -40,7 +41,8 @@ export const CharactersList = () => {
 
   const onClickImage = (id: string | null | undefined) => {
     if (!id) return;
-    navigate(`/characters/${id}`);
+    const parseId = denormalizeId(id);
+    navigate(`/characters/${parseId}`);
   };
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {

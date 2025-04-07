@@ -14,6 +14,7 @@ export const LocationsQuery = graphql`
       results {
         id
         name
+        __typename
         type
         dimension
       }

@@ -2,7 +2,13 @@ import { useLazyLoadQuery } from "react-relay";
 import { EpisodesQuery } from "@/graphql/queries/EpisodesQuery.graphql";
 import {} from "@/relay";
 import { startTransition, useState } from "react";
-import { Button, Card, CardTitle, List } from "@/components";
+import {
+  Button,
+  List,
+  ListItem,
+  ListItemSubtitle,
+  ListItemTitle,
+} from "@/components";
 import {
   EpisodesQuery as EpisodesQueryType,
   EpisodesQuery$variables as FilterTypes,
@@ -41,17 +47,18 @@ export const EpisodesList = () => {
         <h2 className="text-2xl font-black text-primary sm:text-5xl">
           Episodes
         </h2>
-        <div className="flex flex-wrap justify-center gap-2 h-85/100 overflow-auto">
-          {data.episodes?.results &&
-            data.episodes.results.map((episode) => (
-              <Card key={episode?.id} className="hover:cursor-pointer">
-                <CardTitle className="text-xl">
-                  <h3>{episode?.episode}</h3>
-                  <h2>{episode?.name}</h2>
-                  <h3>{episode?.air_date}</h3>
-                </CardTitle>
-              </Card>
-            ))}
+        <div className="flex flex-wrap justify-center gap-2 h-10/10 overflow-auto">
+          <List direction="vertical" className="w-6/12 justify-center">
+            {data.episodes?.results &&
+              data.episodes.results.map((episode) => (
+                <ListItem key={episode?.id}>
+                  <ListItemTitle>{episode?.name}</ListItemTitle>
+                  <ListItemSubtitle>
+                    {episode?.episode} - {episode?.air_date}
+                  </ListItemSubtitle>
+                </ListItem>
+              ))}
+          </List>
         </div>
         <List direction="horizontal" className="w-full justify-center">
           <Button className="hover:cursor-pointer" onClick={onChangePrev}>

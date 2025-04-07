@@ -1,3 +1,4 @@
+import { patchIds } from "@/utils";
 import { Environment, Network, RecordSource, Store } from "relay-runtime";
 
 // Definir la función para realizar las solicitudes de red
@@ -14,7 +15,9 @@ const fetchQuery = async (operation: any, variables: any) => {
       variables,
     }),
   });
-  return await response.json(); // Devuelve la respuesta como JSON
+  const json = await response.json(); // Devuelve la respuesta como JSON
+  const patched = patchIds(json); // Patch de id únicos para el cache de relay
+  return patched;
 };
 
 // Crear el entorno de Relay
