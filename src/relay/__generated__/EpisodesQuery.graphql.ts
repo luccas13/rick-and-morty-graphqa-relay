@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<f44622ba989975a7bb860c680e4df4a7>>
+ * @generated SignedSource<<1a7d40adcde5fecdd67d597feb38da22>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -23,6 +23,7 @@ export type EpisodesQuery$data = {
       readonly prev: number | null | undefined;
     } | null | undefined;
     readonly results: ReadonlyArray<{
+      readonly __typename: "Episode";
       readonly air_date: string | null | undefined;
       readonly episode: string | null | undefined;
       readonly id: string | null | undefined;
@@ -102,6 +103,13 @@ v3 = [
             "args": null,
             "kind": "ScalarField",
             "name": "name",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
+            "name": "__typename",
             "storageKey": null
           },
           {
@@ -190,16 +198,16 @@ return {
     "selections": (v3/*: any*/)
   },
   "params": {
-    "cacheID": "6be1b7353c022c827152b353034c755d",
+    "cacheID": "f9f841adf063151731710802e30d3706",
     "id": null,
     "metadata": {},
     "name": "EpisodesQuery",
     "operationKind": "query",
-    "text": "query EpisodesQuery(\n  $page: Int!\n  $name: String\n  $episode: String\n) {\n  episodes(page: $page, filter: {name: $name, episode: $episode}) {\n    results {\n      id\n      name\n      air_date\n      episode\n    }\n    info {\n      count\n      pages\n      next\n      prev\n    }\n  }\n}\n"
+    "text": "query EpisodesQuery(\n  $page: Int!\n  $name: String\n  $episode: String\n) {\n  episodes(page: $page, filter: {name: $name, episode: $episode}) {\n    results {\n      id\n      name\n      __typename\n      air_date\n      episode\n    }\n    info {\n      count\n      pages\n      next\n      prev\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "b1d8cd60e13204c196de245c37d555a0";
+(node as any).hash = "c7d15df4b50a5b4915c07cd9d09cbaee";
 
 export default node;

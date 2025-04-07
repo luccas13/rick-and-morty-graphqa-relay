@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e4b5b953e2ae2aefd6989e79e0c662cf>>
+ * @generated SignedSource<<78d972bc8d6a2c7fdb923bc3e23b9f0e>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -24,6 +24,7 @@ export type LocationsQuery$data = {
       readonly prev: number | null | undefined;
     } | null | undefined;
     readonly results: ReadonlyArray<{
+      readonly __typename: "Location";
       readonly dimension: string | null | undefined;
       readonly id: string | null | undefined;
       readonly name: string | null | undefined;
@@ -119,6 +120,13 @@ v4 = [
             "alias": null,
             "args": null,
             "kind": "ScalarField",
+            "name": "__typename",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
             "name": "type",
             "storageKey": null
           },
@@ -203,16 +211,16 @@ return {
     "selections": (v4/*: any*/)
   },
   "params": {
-    "cacheID": "dd85eb2fbe3af358a7fff3831096863e",
+    "cacheID": "4cd60a6d80b21b5b9434ab2f7d6ec05a",
     "id": null,
     "metadata": {},
     "name": "LocationsQuery",
     "operationKind": "query",
-    "text": "query LocationsQuery(\n  $page: Int!\n  $name: String\n  $type: String\n  $dimension: String\n) {\n  locations(page: $page, filter: {name: $name, type: $type, dimension: $dimension}) {\n    results {\n      id\n      name\n      type\n      dimension\n    }\n    info {\n      count\n      pages\n      next\n      prev\n    }\n  }\n}\n"
+    "text": "query LocationsQuery(\n  $page: Int!\n  $name: String\n  $type: String\n  $dimension: String\n) {\n  locations(page: $page, filter: {name: $name, type: $type, dimension: $dimension}) {\n    results {\n      id\n      name\n      __typename\n      type\n      dimension\n    }\n    info {\n      count\n      pages\n      next\n      prev\n    }\n  }\n}\n"
   }
 };
 })();
 
-(node as any).hash = "229ee696996051e44ed05634fe361c58";
+(node as any).hash = "a7440b2894db2ccfa5206aa70d6f3d8e";
 
 export default node;

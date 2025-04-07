@@ -6,6 +6,7 @@ export const EpisodesQuery = graphql`
       results {
         id
         name
+        __typename
         air_date
         episode
       }
