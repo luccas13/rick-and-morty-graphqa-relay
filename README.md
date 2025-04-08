@@ -1,50 +1,51 @@
-# Rick and Morty App
+# Rick and Morty Wiki
 
-## 🚀 Descripción
+## 🚀 Description
 
-Esta es una aplicación desarrollada con **Vite, React, TypeScript, GraphQL y Relay** que consume la API de **Rick and Morty** para mostrar personajes, ubicaciones y episodios de la serie.
+This is an application built with **Vite, React, TypeScript, GraphQL, and Relay** that consumes the **Rick and Morty API** to display characters, locations, and episodes from the series.
 
-## 🛠 Tecnologías utilizadas
+## 🛠 Technologies Used
 
-- **Vite** - Entorno de desarrollo rápido para React.
-- **React** - Biblioteca para construir interfaces de usuario.
-- **TypeScript** - Tipado estático para mejorar la mantenibilidad.
-- **GraphQL** - Lenguaje de consulta para APIs.
-- **Relay** - Cliente eficiente para GraphQL.
+- **Vite** – Fast development environment for React.
+- **React** – Library for building user interfaces.
+- **TypeScript** – Static typing for improved maintainability.
+- **GraphQL** – Query language for APIs.
+- **Relay** – Efficient client for GraphQL.
 
-## 📦 Instalación
+## 📦 Installation
 
-Para correr el proyecto en local, sigue estos pasos:
+To run the project locally, follow these steps:
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/tuusuario/rick-and-morty-app.git
+# Clone the repository
+git clone https://github.com/yourusername/rick-and-morty-app.git
 
-# Entrar en el directorio
+# Navigate to the project directory
 cd rick-and-morty-app
 
-# Instalar dependencias
+# Install dependencies
 npm install
 ```
 
-## 🚀 Ejecución en desarrollo
+## 🚀 Development Server
 
 ```bash
-# Iniciar el servidor de desarrollo
+# Start the development server
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173) en tu navegador para ver la aplicación en ejecución.
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the app in action.
 
-## API Utilizada
+## API Used
 
-Esta aplicación consume la API pública de **Rick and Morty**:
+This app uses the public **Rick and Morty** API:
 
 🔗 [https://rickandmortyapi.com/graphql](https://rickandmortyapi.com/graphql)
 
 ---
 
-## 🚀 \*\*Desarrollado por\*\*
-* [**Lucas Bracco**](https://github.com/luccas13)
-* [**Ezequiel Carrizo**](https://github.com/Ezequiel-CE)
+## 🚀 **Developed by**
+
+- [**Lucas Bracco**](https://github.com/luccas13)
+- [**Ezequiel Carrizo**](https://github.com/Ezequiel-CE)
 
