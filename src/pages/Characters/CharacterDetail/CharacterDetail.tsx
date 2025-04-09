@@ -26,18 +26,18 @@ export const CharacterDetail = () => {
   );
 
   return (
-    <main className="w-full h-full flex justify-center">
+    <main className="w-full h-full flex justify-center gap-10">
       <Card className="h-9/10">
         <CardTitle className="text-5xl font-black text-primary sm:text-5xl text-center">
           {data.character?.name}
         </CardTitle>
         <CardImage
-          className="h-8/10"
+          className="h-9/10"
           src={data?.character?.image || undefined}
           alt={data?.character?.name || undefined}
         />
-        <Specs specs={specs} />
       </Card>
+      <Specs specs={specs} />
     </main>
   );
 };

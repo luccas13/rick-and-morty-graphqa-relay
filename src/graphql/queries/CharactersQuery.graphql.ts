@@ -22,8 +22,7 @@ export const CharactersQuery = graphql`
       results {
         id
         __typename
-        name
-        image
+        ...CharactersCardFragment
       }
       info {
         count
