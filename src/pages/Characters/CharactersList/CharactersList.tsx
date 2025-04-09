@@ -9,7 +9,7 @@ import { Button, Input, List } from "@/components";
 import { useNavigate } from "react-router";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { denormalizeId } from "@/utils";
-import { CharactersCard } from "../components/CharactersCard";
+import { CharactersCard } from "../components/CharactersCard/CharactersCard";
 
 const DEFAULT_PARAMS = { page: 1 };
 

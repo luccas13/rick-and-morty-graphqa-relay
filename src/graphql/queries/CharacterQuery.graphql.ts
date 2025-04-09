@@ -5,17 +5,7 @@ export const CharacterQuery = graphql`
     character(id: $id) {
       id
       __typename
-      name
-      status
-      species
-      type
-      gender
-      # location {
-      #   id
-      #   __typename
-      #   name
-      # }
-      image
+      ...CharacterDetailCardFragment
     }
   }
 `;
