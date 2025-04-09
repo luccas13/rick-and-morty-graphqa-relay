@@ -1,0 +1,25 @@
+fragment CharacterDetailCardFragment on Character {
+  name
+  status
+  species
+  type
+  gender
+  origin {
+    id
+    __typename
+    name
+  }
+  location {
+    id
+    __typename
+    name
+  }
+  episode {
+    id
+    __typename
+    name
+    air_date
+    episode
+  }
+  image
+}

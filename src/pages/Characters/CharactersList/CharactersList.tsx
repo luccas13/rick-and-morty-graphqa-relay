@@ -5,10 +5,11 @@ import {
   CharactersQuery$variables as FilterTypes,
 } from "@/relay";
 import { startTransition, useState } from "react";
-import { Button, Card, CardImage, CardTitle, Input, List } from "@/components";
+import { Button, Input, List } from "@/components";
 import { useNavigate } from "react-router";
 import { RxMagnifyingGlass } from "react-icons/rx";
 import { denormalizeId } from "@/utils";
+import { CharactersCard } from "../components/CharactersCard/CharactersCard";
 
 const DEFAULT_PARAMS = { page: 1 };
 
@@ -39,7 +40,7 @@ export const CharactersList = () => {
     });
   };
 
-  const onClickImage = (id: string | null | undefined) => {
+  const onClickCardHandler = (id: string | null | undefined) => {
     if (!id) return;
     const parseId = denormalizeId(id);
     navigate(`/characters/${parseId}`);
@@ -84,21 +85,16 @@ export const CharactersList = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-2 h-85/100 overflow-auto">
           {data.characters?.results &&
-            data.characters.results.map((character) => (
-              <Card
-                key={character?.id}
-                onClick={() => onClickImage(character?.id)}
-                className="hover:cursor-pointer"
-              >
-                <CardImage
-                  src={character?.image || undefined}
-                  alt={character?.name || undefined}
-                />
-                <CardTitle className="text-xl">
-                  <h2>{character?.name}</h2>
-                </CardTitle>
-              </Card>
-            ))}
+            data.characters.results.map(
+              (character, index) =>
+                character && (
+                  <CharactersCard
+                    key={index}
+                    characterRef={character}
+                    onClick={onClickCardHandler}
+                  />
+                )
+            )}
         </div>
         <List direction="horizontal" className="w-full justify-center">
           <Button className="hover:cursor-pointer" onClick={onChangePrev}>

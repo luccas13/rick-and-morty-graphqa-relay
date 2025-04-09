@@ -4,7 +4,7 @@ type SpecsProps = {
 
 export function Specs({ specs }: SpecsProps) {
   return (
-    <dl className="flex flex-wrap gap-4">
+    <dl className="flex flex-wrap gap-4 justify-around">
       {specs.map((spec) => {
         if (!spec.value) return null;
 

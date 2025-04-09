@@ -1,0 +1,5 @@
+fragment CharactersCardFragment on Character {
+  id
+  name
+  image
+}
