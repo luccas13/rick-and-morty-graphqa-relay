@@ -2,9 +2,9 @@ import { Card, CardTitle } from "@/components";
 import { useNavigate } from "react-router";
 
 const links = [
-  { href: "/characters", title: "Characters", imageSrc: "" },
-  { href: "/episodes", title: "Episodes", imageSrc: "" },
-  { href: "/locations", title: "Locations", imageSrc: "" },
+  { href: "/characters", title: "Characters" },
+  { href: "/episodes", title: "Episodes" },
+  { href: "/locations", title: "Locations" },
 ];
 
 const APP_TITLE = "Rick & Morty Wiki";
@@ -31,13 +31,11 @@ export const Home = () => {
         {links.map((link) => {
           return (
             <Card
+              key={link.title}
               onClick={() => onClickCardHandler(link.href)}
               className="hover:cursor-pointer"
             >
-              {/* <CardImage src={link.imageSrc} alt={link.title} /> */}
-              <CardTitle className="text-xl">
-                <h2>{link.title}</h2>
-              </CardTitle>
+              <CardTitle className="text-xl">{link.title}</CardTitle>
             </Card>
           );
         })}
