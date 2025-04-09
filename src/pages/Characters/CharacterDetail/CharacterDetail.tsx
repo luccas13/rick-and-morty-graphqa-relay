@@ -16,8 +16,6 @@ export const CharacterDetail = () => {
   );
 
   return (
-    <main className="w-full h-full flex justify-center gap-10">
-      {data.character && <CharacterDetailCard characterRef={data.character} />}
-    </main>
+    data.character && <CharacterDetailCard characterRef={data.character} />
   );
 };

@@ -4,6 +4,11 @@ fragment CharacterDetailCardFragment on Character {
   species
   type
   gender
+  origin {
+    id
+    __typename
+    name
+  }
   location {
     id
     __typename
@@ -13,6 +18,8 @@ fragment CharacterDetailCardFragment on Character {
     id
     __typename
     name
+    air_date
+    episode
   }
   image
 }
