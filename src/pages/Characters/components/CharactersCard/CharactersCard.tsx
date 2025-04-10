@@ -4,7 +4,7 @@ import { CharactersCardFragment$key } from "@/relay/__generated__/CharactersCard
 
 type Props = {
   characterRef: CharactersCardFragment$key;
-  onClick: (id: string | null | undefined) => void;
+  onClick?: (id: string | null | undefined) => void;
 };
 
 export const CharactersCard = ({ characterRef, onClick }: Props) => {
@@ -20,7 +20,7 @@ export const CharactersCard = ({ characterRef, onClick }: Props) => {
   );
 
   const onClickCard = (id: string | null | undefined) => {
-    onClick(id);
+    onClick?.(id);
   };
 
   return (

@@ -17,9 +17,7 @@ fragment CharacterDetailCardFragment on Character {
   episode {
     id
     __typename
-    name
-    air_date
-    episode
+    ...EpisodesListItemFragment
   }
   image
 }
