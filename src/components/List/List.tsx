@@ -24,14 +24,16 @@ export function List({
   );
 }
 
-type ListItemProps = {
+type ListItemProps = React.HTMLAttributes<HTMLLIElement> & {
   className?: string;
   children: React.ReactNode;
 };
 
-export function ListItem({ children, className }: ListItemProps) {
+export function ListItem({ children, className, ...props }: ListItemProps) {
   return (
-    <li className={`[&>*]:block [&>*]:py-4 ${className || ""}`}>{children}</li>
+    <li className={`[&>*]:block [&>*]:py-4 ${className || ""}`} {...props}>
+      {children}
+    </li>
   );
 }
 

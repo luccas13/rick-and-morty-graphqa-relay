@@ -5,10 +5,8 @@ export const EpisodesQuery = graphql`
     episodes(page: $page, filter: { name: $name, episode: $episode }) {
       results {
         id
-        name
         __typename
-        air_date
-        episode
+        ...EpisodesListItemFragment
       }
       info {
         count

@@ -1,0 +1,11 @@
+fragment EpisodeDetailCardFragment on Episode {
+  id
+  name
+  episode
+  air_date
+  characters {
+    id
+    __typename
+    ...CharactersCardFragment
+  }
+}

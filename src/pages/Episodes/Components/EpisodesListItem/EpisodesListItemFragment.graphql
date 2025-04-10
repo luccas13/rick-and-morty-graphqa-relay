@@ -1,0 +1,12 @@
+fragment EpisodesListItemFragment on Episode {
+  id
+  name
+  air_date
+  episode
+  #   characters {
+  #     id
+  #     __typename
+  #     name
+  #     image
+  #   }
+}
