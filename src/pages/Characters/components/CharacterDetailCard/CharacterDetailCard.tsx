@@ -1,16 +1,8 @@
-import {
-  Card,
-  CardImage,
-  CardTitle,
-  List,
-  ListItem,
-  ListItemSubtitle,
-  ListItemTitle,
-  Specs,
-} from "@/components";
+import { Card, CardImage, CardTitle, List, Specs } from "@/components";
 import { graphql, useFragment } from "react-relay";
 import { CharacterDetailCardFragment$key } from "@/relay/__generated__/CharacterDetailCardFragment.graphql";
 import { useMemo } from "react";
+import { EpisodesListItem } from "@/pages/Episodes/Components/EpisodesListItem/EpisodesListItem";
 
 const characterDetailCardFragment = graphql`
   fragment CharacterDetailCardFragment on Character {
@@ -32,9 +24,7 @@ const characterDetailCardFragment = graphql`
     episode {
       id
       __typename
-      name
-      air_date
-      episode
+      ...EpisodesListItemFragment
     }
     image
   }
@@ -76,14 +66,17 @@ export const CharacterDetailCard = ({ characterRef }: Props) => {
         </CardTitle>
         <List direction="vertical" className="h-9/10 overflow-auto">
           {data.episode.length > 0 &&
-            data.episode.map((episode) => (
-              <ListItem key={episode?.id}>
-                <ListItemTitle>{episode?.name}</ListItemTitle>
-                <ListItemSubtitle>
-                  {episode?.episode} - {episode?.air_date}
-                </ListItemSubtitle>
-              </ListItem>
-            ))}
+            data.episode.map(
+              (episode) =>
+                episode && (
+                  <EpisodesListItem
+                    key={episode.id}
+                    episodeRef={episode}
+                    className="text-center hover:cursor-pointer"
+                    onClick={() => {}}
+                  />
+                )
+            )}
         </List>
       </Card>
     </main>
