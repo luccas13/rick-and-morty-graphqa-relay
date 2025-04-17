@@ -73,6 +73,7 @@ export const CharactersList = () => {
               className="w-100"
               autoComplete="off"
               onChange={onChangeInput}
+              onPressEnter={onClickSearchButton}
             />
             <Button
               aria-label="Search"
