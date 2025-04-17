@@ -9,7 +9,7 @@ export function Card({ className, children, ...rest }: CardProps) {
   return (
     <div
       {...rest}
-      className={`flex flex-col gap-4 rounded-lg border bg-card p-6 shadow ${
+      className={`flex flex-col gap-4 rounded-lg border bg-card p-4 shadow ${
         className || ""
       }`}
     >

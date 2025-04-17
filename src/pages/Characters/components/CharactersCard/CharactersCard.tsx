@@ -27,10 +27,19 @@ export const CharactersCard = ({ characterRef, onClick }: Props) => {
     <Card
       key={data?.id}
       onClick={() => onClickCard(data?.id)}
-      className="hover:cursor-pointer"
+      className="hover:cursor-pointer h-50 w-50"
     >
-      <CardImage src={data?.image || undefined} alt={data?.name || undefined} />
-      <CardTitle className="text-xl">{data?.name}</CardTitle>
+      <CardImage
+        src={data?.image || undefined}
+        alt={data?.name || undefined}
+        className="h-75/100 w-75/100"
+      />
+      <CardTitle
+        title={data?.name || ""}
+        className="text-[clamp(0.75rem,_3vw,_1rem)] truncate overflow-hidden whitespace-nowrap"
+      >
+        {data?.name}
+      </CardTitle>
     </Card>
   );
 };
