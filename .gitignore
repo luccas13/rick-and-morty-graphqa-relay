@@ -13,7 +13,11 @@ dist-ssr
 *.local
 
 # Relay
-**/__generated__/
+# Ignora todo el contenido de __generated__
+**/__generated__/*
+
+# Pero no ignores el archivo de guardado
+!**/__generated__/.gitkeep
 
 # Editor directories and files
 .vscode/*
