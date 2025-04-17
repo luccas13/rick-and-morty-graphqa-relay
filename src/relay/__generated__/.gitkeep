@@ -1,0 +1,3 @@
+// This file exists to keep the __generated__ folder in the repository.
+// Relay Compiler requires this folder to exist in order to generate .ts files automatically.
+// The generated files are ignored via .gitignore.
